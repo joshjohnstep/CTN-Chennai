@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ContactDialog } from "./ContactDialog";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,11 +32,9 @@ export function Navigation() {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/">
-          <a className="text-2xl font-serif font-bold text-primary tracking-tight">
-            CTN<span className="text-accent">.</span>
-          </a>
-        </Link>
+        <a href="/" className="text-2xl font-serif font-bold text-primary tracking-tight">
+          CTN<span className="text-accent">.</span>
+        </a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -50,15 +49,18 @@ export function Navigation() {
               {link.name}
             </a>
           ))}
-          <Button 
-            className={`${
-              isScrolled 
-                ? "bg-primary text-primary-foreground" 
-                : "bg-white text-primary hover:bg-white/90"
-            }`}
-          >
-            Join the Movement
-          </Button>
+          <ContactDialog triggerText="Join the Movement">
+            <Button 
+              className={`${
+                isScrolled 
+                  ? "bg-primary text-primary-foreground" 
+                  : "bg-white text-primary hover:bg-white/90"
+              }`}
+              data-testid="button-join-nav"
+            >
+              Join the Movement
+            </Button>
+          </ContactDialog>
         </div>
 
         {/* Mobile Toggle */}
@@ -87,7 +89,9 @@ export function Navigation() {
               {link.name}
             </a>
           ))}
-          <Button className="w-full">Join the Movement</Button>
+          <ContactDialog triggerText="Join the Movement">
+            <Button className="w-full" data-testid="button-join-mobile">Join the Movement</Button>
+          </ContactDialog>
         </div>
       )}
     </nav>

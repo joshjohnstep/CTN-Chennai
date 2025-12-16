@@ -1,6 +1,8 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { TrackCard } from "@/components/TrackCard";
+import { ContactDialog } from "@/components/ContactDialog";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { Button } from "@/components/ui/button";
 import { 
   Church, 
@@ -122,9 +124,28 @@ export default function Home() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
               Join us in our mission to bring unity, hope, and wholeness to our city. Whether you are a leader, professional, or student, there is a place for you.
             </p>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold px-10 py-6 text-lg shadow-lg">
-              Partner With Us
-            </Button>
+            <ContactDialog triggerText="Partner With Us">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-bold px-10 py-6 text-lg shadow-lg" data-testid="button-partner">
+                Partner With Us
+              </Button>
+            </ContactDialog>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="py-16 bg-secondary/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-primary mb-4">
+                Stay Connected
+              </h3>
+              <p className="text-muted-foreground mb-8">
+                Subscribe to our newsletter to receive updates on events, opportunities, and stories of transformation happening across Chennai.
+              </p>
+              <div className="flex justify-center">
+                <NewsletterSignup />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -133,9 +154,9 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               <div>
-                <a className="text-2xl font-serif font-bold text-white tracking-tight mb-6 block">
+                <div className="text-2xl font-serif font-bold text-white tracking-tight mb-6">
                   CTN<span className="text-accent">.</span>
-                </a>
+                </div>
                 <p className="text-gray-400 leading-relaxed">
                   An Interdenominational and Intergenerational Movement for City Transformation in Chennai.
                 </p>
@@ -162,10 +183,9 @@ export default function Home() {
               <div>
                 <h4 className="text-lg font-bold mb-6 text-accent">Quick Links</h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Our Tracks</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Events</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">Donate</a></li>
+                  <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+                  <li><a href="#tracks" className="hover:text-white transition-colors">Our Tracks</a></li>
+                  <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
                 </ul>
               </div>
             </div>
