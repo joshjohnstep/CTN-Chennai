@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { ContactDialog } from "./ContactDialog";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import heroVideo from "@assets/generated_videos/chennai_beach_cityscape_sunset.mp4";
-import heroBg from "@assets/generated_images/chennai_skyline_golden_hour.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -32,7 +31,6 @@ export function Hero() {
           muted
           loop
           playsInline
-          poster={heroBg}
           className="w-full h-full object-cover"
         >
           <source src={heroVideo} type="video/mp4" />

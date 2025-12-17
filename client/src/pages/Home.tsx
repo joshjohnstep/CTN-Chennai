@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { TrackCard } from "@/components/TrackCard";
 import { ContactDialog } from "@/components/ContactDialog";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
-import { AnimatedSection, FadeIn } from "@/components/AnimatedSection";
+import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem, ScaleIn } from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { 
   Church, 
@@ -24,6 +24,9 @@ import communityImg from "@assets/generated_images/diverse_community_unity.png";
 import youthImg from "@assets/generated_images/young_adults_collaborating.png";
 import marketplaceImg from "@assets/generated_images/modern_marketplace_professionals.png";
 import socialImg from "@assets/generated_images/compassionate_social_action.png";
+import prayerImg from "@assets/generated_images/people_praying_together_unity.png";
+import mediaImg from "@assets/generated_images/creative_media_production_team.png";
+import mentalHealthImg from "@assets/generated_images/mental_health_support_counseling.png";
 
 export default function Home() {
   const tracks = [
@@ -37,7 +40,7 @@ export default function Home() {
       title: "Movement of Prayer",
       description: "Uniting the city through prayer. Gathering across regions and denominations to intercede for our city and leaders.",
       icon: Sparkles,
-      image: undefined 
+      image: prayerImg
     },
     {
       title: "Youth Track",
@@ -61,20 +64,20 @@ export default function Home() {
       title: "Media Track",
       description: "Bridging the gap between Church and community through creative storytelling and fresh content.",
       icon: Video,
-      image: undefined
+      image: mediaImg
     },
     {
       title: "Mental Health Track",
       description: "Restoring hope and wholeness through mental health awareness, care, and early intervention.",
       icon: BrainCircuit,
-      image: undefined
+      image: mentalHealthImg
     }
   ];
 
   const stats = [
     { number: "7", label: "Transformation Tracks" },
     { number: "100+", label: "Partner Churches" },
-    { number: "1000s", label: "Lives Impacted" },
+    { number: "1000+", label: "Lives Impacted" },
     { number: "1", label: "United Vision" }
   ];
 
@@ -86,27 +89,22 @@ export default function Home() {
         <Hero />
 
         {/* Stats Bar */}
-        <section className="bg-primary py-8 border-t border-white/10">
+        <section className="bg-primary py-12 border-t border-white/10">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-3xl md:text-4xl font-serif font-semibold text-accent mb-1">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-white/70 font-light tracking-wide">
-                    {stat.label}
-                  </div>
-                </motion.div>
+                <StaggerItem key={index} className="text-center">
+                  <ScaleIn delay={index * 0.1}>
+                    <div className="text-4xl md:text-5xl font-serif font-semibold text-accent mb-2">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-white/70 font-light tracking-wide uppercase">
+                      {stat.label}
+                    </div>
+                  </ScaleIn>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </section>
 
