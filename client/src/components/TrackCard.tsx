@@ -16,38 +16,53 @@ interface TrackCardProps {
 export function TrackCard({ title, description, icon: Icon, image, index }: TrackCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <Card className="group overflow-hidden h-full border-none shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col">
-        <div className="relative h-48 overflow-hidden bg-muted">
-          <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors z-10" />
+      <Card className="group overflow-hidden h-full border-none shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col bg-white">
+        <div className="relative h-52 overflow-hidden bg-muted">
+          <motion.div 
+            className="absolute inset-0 bg-primary/30 group-hover:bg-primary/10 transition-all duration-500 z-10"
+            whileHover={{ opacity: 0.5 }}
+          />
           {image ? (
-            <img 
+            <motion.img 
               src={image} 
               alt={title} 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="w-full h-full object-cover"
+              whileHover={{ scale: 1.08 }}
+              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-secondary/30">
-              <Icon className="w-16 h-16 text-primary/20" />
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary/50 to-secondary">
+              <Icon className="w-20 h-20 text-primary/15" strokeWidth={1} />
             </div>
           )}
-          <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm p-2 rounded-lg shadow-sm">
-            <Icon className="w-6 h-6 text-primary" />
-          </div>
+          <motion.div 
+            className="absolute top-4 left-4 z-20 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-md"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            <Icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+          </motion.div>
         </div>
         
-        <CardHeader className="pb-2">
-          <CardTitle className="text-xl font-serif font-bold text-primary group-hover:text-accent transition-colors flex justify-between items-center">
+        <CardHeader className="pb-3 pt-6">
+          <CardTitle className="text-xl font-serif font-semibold text-primary group-hover:text-accent transition-colors duration-300 flex justify-between items-center">
             {title}
-            <ArrowUpRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0" />
+            <motion.div
+              initial={{ opacity: 0, x: -10 }}
+              whileHover={{ opacity: 1, x: 0 }}
+              className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <ArrowUpRight className="w-5 h-5" />
+            </motion.div>
           </CardTitle>
         </CardHeader>
-        <CardContent className="flex-grow">
-          <CardDescription className="text-base leading-relaxed text-muted-foreground">
+        <CardContent className="flex-grow pb-6">
+          <CardDescription className="text-base leading-relaxed text-muted-foreground font-light">
             {description}
           </CardDescription>
         </CardContent>
