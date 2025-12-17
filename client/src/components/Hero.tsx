@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ContactDialog } from "./ContactDialog";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import heroVideo from "@assets/generated_videos/chennai_aerial_golden_hour.mp4";
+import heroVideo from "@assets/generated_videos/chennai_beach_cityscape_sunset.mp4";
 import heroBg from "@assets/generated_images/chennai_skyline_golden_hour.png";
 
 const fadeInUp = {
@@ -53,7 +53,7 @@ export function Hero() {
             variants={fadeInUp}
             className="inline-block py-2 px-4 rounded-full bg-white/10 text-white/90 border border-white/20 text-xs font-medium uppercase tracking-[0.2em] mb-8 backdrop-blur-sm"
           >
-            Chennai Transformation Network
+            Transforming Chennai Together
           </motion.span>
           
           <motion.h1 
