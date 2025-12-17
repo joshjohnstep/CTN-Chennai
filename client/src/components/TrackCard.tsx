@@ -31,6 +31,7 @@ export function TrackCard({ title, description, icon: Icon, image, index }: Trac
             <motion.img 
               src={image} 
               alt={title} 
+              loading="lazy"
               className="w-full h-full object-cover"
               whileHover={{ scale: 1.08 }}
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
