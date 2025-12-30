@@ -81,7 +81,7 @@ export function Hero() {
             variants={fadeInUp}
             className="inline-block py-2 px-4 rounded-full bg-white/10 text-white/90 border border-white/20 text-xs font-medium uppercase tracking-[0.2em] mb-8 backdrop-blur-sm"
           >
-            Transforming Chennai Together
+            Working Together for a Better Chennai
           </motion.span>
           
           <motion.h1 

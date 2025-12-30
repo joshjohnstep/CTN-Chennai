@@ -30,14 +30,19 @@ export function Navigation() {
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm py-4"
-          : "bg-transparent py-6"
+          ? "bg-white/95 backdrop-blur-md shadow-sm py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="/" className="text-2xl font-serif font-semibold tracking-tight transition-colors duration-300">
-          <span className={isScrolled ? "text-primary" : "text-white"}>CTN</span>
-          <span className="text-accent">.</span>
+        <a href="/" className="flex items-center gap-3">
+          <img 
+            src="/ctn-logo.png" 
+            alt="CTN" 
+            className={`h-10 md:h-12 transition-all duration-300 ${
+              isScrolled ? "" : "brightness-0 invert"
+            }`}
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -58,7 +63,7 @@ export function Navigation() {
             <Button 
               className={`font-medium transition-all duration-300 hover:scale-[1.02] ${
                 isScrolled 
-                  ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                  ? "bg-accent text-white hover:bg-accent/90" 
                   : "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20"
               }`}
               data-testid="button-join-nav"
@@ -111,7 +116,7 @@ export function Navigation() {
                 transition={{ delay: 0.4 }}
               >
                 <ContactDialog triggerText="Join the Movement">
-                  <Button className="w-full bg-primary" data-testid="button-join-mobile">
+                  <Button className="w-full bg-accent hover:bg-accent/90" data-testid="button-join-mobile">
                     Join the Movement
                   </Button>
                 </ContactDialog>

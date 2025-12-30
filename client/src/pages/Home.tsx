@@ -17,65 +17,72 @@ import {
   MapPin,
   Mail,
   Phone,
-  ArrowRight
+  ArrowRight,
+  Building2
 } from "lucide-react";
 
-import communityImg from "@assets/generated_images/diverse_community_unity.png";
+import churchesImg from "@assets/generated_images/churches_united_in_worship.png";
+import prayerImg from "@assets/generated_images/people_praying_together_unity.png";
 import youthImg from "@assets/generated_images/young_adults_collaborating.png";
 import marketplaceImg from "@assets/generated_images/modern_marketplace_professionals.png";
 import socialImg from "@assets/generated_images/compassionate_social_action.png";
-import prayerImg from "@assets/generated_images/people_praying_together_unity.png";
 import mediaImg from "@assets/generated_images/creative_media_production_team.png";
 import mentalHealthImg from "@assets/generated_images/mental_health_support_counseling.png";
 
 export default function Home() {
   const tracks = [
     {
-      title: "Movement of Churches",
-      description: "Building unity and growth across the Body of Christ. Strengthening existing congregations and supporting new church plants.",
+      title: "CTN Movement of Churches",
+      description: "Building unity and growth across the Body of Christ. We intentionally nurture unity among Churches in Chennai, strengthening existing congregations and supporting new church plants. Together, we work to build healthy Churches that reflect Christ's love, serve their neighbourhoods, and join hands in citywide transformation.",
       icon: Church,
-      image: communityImg
+      image: churchesImg
     },
     {
-      title: "Movement of Prayer",
-      description: "Uniting the city through prayer. Gathering across regions and denominations to intercede for our city and leaders.",
+      title: "CTN Mobilisation of Prayer",
+      description: "Uniting the city through prayer. We gather regularly across regions and denominations to pray for our city, its leaders, and its people. Through united prayer gatherings and citywide initiatives, we believe that transformation begins when we seek God together in humility and faith.",
       icon: Sparkles,
       image: prayerImg
     },
     {
-      title: "Youth Track",
-      description: "Empowering the next generation of leaders through sports, music, and discipleship programs.",
+      title: "CTN Millennials Track",
+      description: "Empowering the next generation of leaders. We engage youth and young adults through sports, music, creative events, and discipleship programmes. By recognising their gifts and nurturing Kingdom values, we are raising a generation of city changers—leaders who will carry God's heart into every sphere of society.",
       icon: Users,
       image: youthImg
     },
     {
-      title: "Marketplace Track",
-      description: "Equipping professionals and entrepreneurs to integrate faith with work and transform their industries.",
+      title: "CTN Business Track",
+      description: "Building the Kingdom by transforming the marketplace to impact the city. We equip entrepreneurs & business leaders to integrate faith with their work, bringing integrity, compassion, and Kingdom purpose into their industries. Through our collaboration and mentoring, we seek to transform the marketplace and influence the city for Christ.",
       icon: Briefcase,
       image: marketplaceImg
     },
     {
-      title: "CITYSERVE (MEET)",
-      description: "Empowering the Church to engage meaningfully with the marginalised and vulnerable communities.",
+      title: "CTN Professionals Track",
+      description: "We equip professionals to lead with integrity, excellence, and purpose in their workplaces. Through collaboration, mentoring, and shared learning, we empower leaders to positively impact their industries, shape ethical cultures, and contribute to the transformation of the marketplace and the city.",
+      icon: Building2,
+      image: undefined
+    },
+    {
+      title: "CTN Marginalised Track (MEET)",
+      description: "Empowering and equipping the Church to engage meaningfully with the marginalised. Through the Marginalised Empowering and Equipping Track (MEET), we help Churches and organisations engage with the city's most vulnerable communities. We catalyse partnerships, promote justice, and inspire compassion so that the Church becomes a visible expression of God's love in action.",
       icon: HeartHandshake,
       image: socialImg
     },
     {
-      title: "Media Track",
-      description: "Bridging the gap between Church and community through creative storytelling and fresh content.",
+      title: "CTN Media Track",
+      description: "Bridging the gap between Church and community through creative storytelling. We collaborate with media professionals and creatives to share positive stories, develop fresh content, and communicate Kingdom values. Our goal is to amplify hope-filled narratives, bridge the gap between the Church and community, and advance the Great Commission through the power of creativity.",
       icon: Video,
       image: mediaImg
     },
     {
-      title: "Mental Health Track",
-      description: "Restoring hope and wholeness through mental health awareness, care, and early intervention.",
+      title: "CTN Mental Health Track",
+      description: "Restoring hope and wholeness through mental health awareness and care. We believe that emotional and spiritual well-being are vital to city transformation. The Mental Health Track brings together Churches, counsellors, professionals, and volunteers to equip communities with tools for care, awareness, and early intervention. We seek to break stigma, offer support, and nurture wholeness in individuals and families across the city.",
       icon: BrainCircuit,
       image: mentalHealthImg
     }
   ];
 
   const stats = [
-    { number: "7", label: "Transformation Tracks" },
+    { number: "8", label: "Transformation Tracks" },
     { number: "100+", label: "Partner Churches" },
     { number: "1000+", label: "Lives Impacted" },
     { number: "1", label: "United Vision" }
@@ -127,7 +134,7 @@ export default function Home() {
               </AnimatedSection>
               <AnimatedSection delay={0.2}>
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12 font-light max-w-3xl mx-auto">
-                  We are a growing movement of Christian leaders from various spheres of influence in the city—from Churches, NGOs, the Marketplace, Government spaces, and other sectors. Our vision is that the Whole Church will take the Whole Gospel to the Whole City, resulting in a transformed Chennai.
+                  We are a growing movement of Christian leaders from various spheres of influence in the city—from Churches, NGOs, the Marketplace, Government spaces, and other sectors—coming together to Connect, Collaborate, Create, Catalyse, and Celebrate. Our vision is that the Whole Church will take the Whole Gospel to the Whole City, resulting in a transformed Chennai.
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.3}>
@@ -226,9 +233,11 @@ export default function Home() {
             <FadeIn>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
                 <div>
-                  <div className="text-3xl font-serif font-semibold text-white tracking-tight mb-6">
-                    CTN<span className="text-accent">.</span>
-                  </div>
+                  <img 
+                    src="/ctn-logo.png" 
+                    alt="Chennai Transformation Network" 
+                    className="h-16 mb-6 brightness-0 invert"
+                  />
                   <p className="text-gray-400 leading-relaxed font-light">
                     An Interdenominational and Intergenerational Movement for City Transformation in Chennai.
                   </p>
@@ -247,13 +256,10 @@ export default function Home() {
                       <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                         <Mail className="w-4 h-4 text-accent" />
                       </div>
-                      <span className="font-light">contact@ctnchennai.org</span>
-                    </div>
-                    <div className="flex items-center gap-4 text-gray-400 hover:text-white transition-colors group">
-                      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                        <Phone className="w-4 h-4 text-accent" />
+                      <div className="font-light flex flex-col">
+                        <span>rameshr@ctnchennai.org</span>
+                        <span>nelsons@ctnchennai.org</span>
                       </div>
-                      <span className="font-light">+91 98765 43210</span>
                     </div>
                   </div>
                 </div>

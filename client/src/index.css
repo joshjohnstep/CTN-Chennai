@@ -42,8 +42,8 @@
   --secondary: 35 30% 94%;
   --secondary-foreground: 215 60% 25%;
 
-  /* Accent: Marigold/Orange */
-  --accent: 35 90% 55%;
+  /* Accent: CTN Teal */
+  --accent: 174 70% 45%;
   --accent-foreground: 0 0% 100%;
 
   --background: 40 20% 98%;
@@ -88,7 +88,7 @@
   --muted: 215 40% 20%;
   --muted-foreground: 215 20% 70%;
   
-  --accent: 35 90% 55%;
+  --accent: 174 70% 50%;
   --accent-foreground: 0 0% 100%;
   
   --border: 215 40% 20%;
