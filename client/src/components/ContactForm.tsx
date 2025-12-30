@@ -12,18 +12,29 @@ import { toast } from "sonner";
 import { Loader2, Send } from "lucide-react";
 
 const tracks = [
-  "Movement of Churches",
-  "Movement of Prayer",
-  "Youth Track",
-  "Marketplace Track",
-  "CITYSERVE (MEET)",
-  "Media Track",
-  "Mental Health Track",
+  "CTN Movement of Churches",
+  "CTN Mobilisation of Prayer",
+  "CTN Millennials Track",
+  "CTN Business Track",
+  "CTN Professionals Track",
+  "CTN Marginalised Track (MEET)",
+  "CTN Media Track",
+  "CTN Mental Health Track",
   "General Inquiry"
+];
+
+const contactReasons = [
+  "I want to join a track",
+  "I want to partner with CTN",
+  "I want to volunteer",
+  "I want to donate / support",
+  "I have a question",
+  "Other"
 ];
 
 export function ContactForm() {
   const [selectedTrack, setSelectedTrack] = useState<string>("");
+  const [selectedReason, setSelectedReason] = useState<string>("");
   
   const { register, handleSubmit, formState: { errors }, reset } = useForm<InsertContactSubmission>({
     resolver: zodResolver(insertContactSubmissionSchema),
@@ -48,6 +59,7 @@ export function ContactForm() {
       toast.success(data.message);
       reset();
       setSelectedTrack("");
+      setSelectedReason("");
     },
     onError: (error: Error) => {
       toast.error(error.message);
@@ -55,8 +67,10 @@ export function ContactForm() {
   });
 
   const onSubmit = (data: InsertContactSubmission) => {
+    const reasonPrefix = selectedReason ? `[${selectedReason}] ` : "";
     contactMutation.mutate({
       ...data,
+      message: reasonPrefix + data.message,
       trackInterest: selectedTrack || undefined,
     });
   };
@@ -113,22 +127,40 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="track" className="text-sm font-medium">
-            Track of Interest (Optional)
+          <Label htmlFor="reason" className="text-sm font-medium">
+            Reason for Contact <span className="text-destructive">*</span>
           </Label>
-          <Select value={selectedTrack} onValueChange={setSelectedTrack}>
-            <SelectTrigger id="track" data-testid="select-track">
-              <SelectValue placeholder="Select a track" />
+          <Select value={selectedReason} onValueChange={setSelectedReason}>
+            <SelectTrigger id="reason" data-testid="select-reason">
+              <SelectValue placeholder="Why are you contacting us?" />
             </SelectTrigger>
             <SelectContent>
-              {tracks.map((track) => (
-                <SelectItem key={track} value={track}>
-                  {track}
+              {contactReasons.map((reason) => (
+                <SelectItem key={reason} value={reason}>
+                  {reason}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
         </div>
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="track" className="text-sm font-medium">
+          Track of Interest (Optional)
+        </Label>
+        <Select value={selectedTrack} onValueChange={setSelectedTrack}>
+          <SelectTrigger id="track" data-testid="select-track">
+            <SelectValue placeholder="Select a track you're interested in" />
+          </SelectTrigger>
+          <SelectContent>
+            {tracks.map((track) => (
+              <SelectItem key={track} value={track}>
+                {track}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="space-y-2">

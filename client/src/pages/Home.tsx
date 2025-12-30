@@ -229,61 +229,91 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer id="contact" className="bg-gray-950 text-white py-20">
+        <footer id="contact" className="bg-gray-900 text-white py-24">
           <div className="container mx-auto px-4">
             <FadeIn>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-                <div>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
+                <div className="md:col-span-1">
                   <img 
                     src="/ctn-logo.png" 
                     alt="Chennai Transformation Network" 
-                    className="h-16 mb-6 brightness-0 invert"
+                    className="h-14 mb-8"
                   />
-                  <p className="text-gray-400 leading-relaxed font-light">
+                  <p className="text-gray-400 leading-relaxed font-light text-sm">
                     An Interdenominational and Intergenerational Movement for City Transformation in Chennai.
                   </p>
                 </div>
                 
-                <div>
-                  <h4 className="text-sm font-medium mb-6 text-white uppercase tracking-[0.15em]">Contact Us</h4>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4 text-gray-400 hover:text-white transition-colors group">
-                      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                <div className="md:col-span-1">
+                  <h4 className="text-sm font-semibold mb-8 text-white uppercase tracking-[0.15em]">Contact Us</h4>
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4 text-gray-400 hover:text-white transition-colors group">
+                      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors flex-shrink-0">
                         <MapPin className="w-4 h-4 text-accent" />
                       </div>
-                      <span className="font-light">Chennai, Tamil Nadu, India</span>
+                      <span className="font-light text-sm pt-2">Chennai, Tamil Nadu, India</span>
                     </div>
-                    <div className="flex items-center gap-4 text-gray-400 hover:text-white transition-colors group">
-                      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                    <div className="flex items-start gap-4 text-gray-400 hover:text-white transition-colors group">
+                      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors flex-shrink-0">
                         <Mail className="w-4 h-4 text-accent" />
                       </div>
-                      <div className="font-light flex flex-col">
-                        <span>rameshr@ctnchennai.org</span>
-                        <span>nelsons@ctnchennai.org</span>
+                      <div className="font-light text-sm flex flex-col gap-1 pt-2">
+                        <a href="mailto:rameshr@ctnchennai.org" className="hover:text-accent transition-colors">rameshr@ctnchennai.org</a>
+                        <a href="mailto:nelsons@ctnchennai.org" className="hover:text-accent transition-colors">nelsons@ctnchennai.org</a>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div>
-                  <h4 className="text-sm font-medium mb-6 text-white uppercase tracking-[0.15em]">Quick Links</h4>
-                  <ul className="space-y-3 text-gray-400">
+                <div className="md:col-span-1">
+                  <h4 className="text-sm font-semibold mb-8 text-white uppercase tracking-[0.15em]">Quick Links</h4>
+                  <ul className="space-y-4 text-gray-400">
                     <li>
-                      <a href="#about" className="hover:text-accent transition-colors font-light flex items-center gap-2 group">
+                      <a href="#about" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
                         About Us
                       </a>
                     </li>
                     <li>
-                      <a href="#tracks" className="hover:text-accent transition-colors font-light flex items-center gap-2 group">
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
                         Our Tracks
                       </a>
                     </li>
                     <li>
-                      <a href="#contact" className="hover:text-accent transition-colors font-light flex items-center gap-2 group">
+                      <a href="#contact" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
                         Contact
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="md:col-span-1">
+                  <h4 className="text-sm font-semibold mb-8 text-white uppercase tracking-[0.15em]">Our Tracks</h4>
+                  <ul className="space-y-4 text-gray-400">
+                    <li>
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Movement of Churches
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Mobilisation of Prayer
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Business & Professionals
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Millennials Track
                       </a>
                     </li>
                   </ul>
@@ -291,7 +321,7 @@ export default function Home() {
               </div>
             </FadeIn>
             
-            <div className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm font-light">
+            <div className="border-t border-gray-800 mt-20 pt-10 text-center text-gray-500 text-sm font-light">
               © {new Date().getFullYear()} Chennai Transformation Network. All rights reserved.
             </div>
           </div>
