@@ -39,9 +39,7 @@ export function Navigation() {
           <img 
             src="/ctn-logo.png" 
             alt="CTN" 
-            className={`h-10 md:h-12 transition-all duration-300 ${
-              isScrolled ? "" : "brightness-0 invert"
-            }`}
+            className="h-10 md:h-12 transition-all duration-300"
           />
         </a>
 

@@ -34,20 +34,20 @@
 
 :root {
   /* Warm, Professional Palette */
-  /* Primary: Deep Chennai Blue/Teal */
-  --primary: 215 60% 25%;
+  /* Primary: Deep Navy Blue */
+  --primary: 215 65% 18%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Warm Sand/Cream */
-  --secondary: 35 30% 94%;
-  --secondary-foreground: 215 60% 25%;
+  /* Secondary: Light Gray/Cream */
+  --secondary: 210 20% 94%;
+  --secondary-foreground: 215 65% 18%;
 
-  /* Accent: CTN Teal */
-  --accent: 174 70% 45%;
+  /* Accent: CTN Teal (darker) */
+  --accent: 174 75% 35%;
   --accent-foreground: 0 0% 100%;
 
-  --background: 40 20% 98%;
-  --foreground: 215 40% 15%;
+  --background: 210 15% 98%;
+  --foreground: 215 50% 12%;
 
   --card: 0 0% 100%;
   --card-foreground: 215 40% 15%;

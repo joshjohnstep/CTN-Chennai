@@ -28,6 +28,7 @@ import marketplaceImg from "@assets/generated_images/modern_marketplace_professi
 import socialImg from "@assets/generated_images/compassionate_social_action.png";
 import mediaImg from "@assets/generated_images/creative_media_production_team.png";
 import mentalHealthImg from "@assets/generated_images/mental_health_support_counseling.png";
+import professionalsImg from "@assets/generated_images/professional_team_meeting_office.png";
 
 export default function Home() {
   const tracks = [
@@ -59,7 +60,7 @@ export default function Home() {
       title: "CTN Professionals Track",
       description: "We equip professionals to lead with integrity, excellence, and purpose in their workplaces. Through collaboration, mentoring, and shared learning, we empower leaders to positively impact their industries, shape ethical cultures, and contribute to the transformation of the marketplace and the city.",
       icon: Building2,
-      image: undefined
+      image: professionalsImg
     },
     {
       title: "CTN Marginalised Track (MEET)",
