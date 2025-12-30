@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 import churchesImg from "@assets/generated_images/churches_united_in_worship.png";
-import prayerImg from "@assets/generated_images/people_praying_together_unity.png";
+import prayerImg from "@assets/stock_images/people_praying_toget_77a5c014.jpg";
 import youthImg from "@assets/generated_images/young_adults_collaborating.png";
 import marketplaceImg from "@assets/generated_images/modern_marketplace_professionals.png";
 import socialImg from "@assets/generated_images/compassionate_social_action.png";
