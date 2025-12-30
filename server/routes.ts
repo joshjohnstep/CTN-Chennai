@@ -3,6 +3,45 @@ import { type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSubmissionSchema, insertNewsletterSubscriberSchema } from "@shared/schema";
 import { fromZodError } from "zod-validation-error";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const NOTIFICATION_EMAILS = [
+  "infoctn23@gmail.com",
+  "rameshr@ctnchennai.org",
+  "nelsons@ctnchennai.org"
+];
+
+async function sendContactNotification(data: {
+  name: string;
+  email: string;
+  phone?: string | null;
+  message: string;
+  trackInterest?: string | null;
+}) {
+  try {
+    await resend.emails.send({
+      from: "CTN Contact Form <onboarding@resend.dev>",
+      to: NOTIFICATION_EMAILS,
+      subject: `New Contact Form Submission from ${data.name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        ${data.phone ? `<p><strong>Phone:</strong> ${data.phone}</p>` : ''}
+        ${data.trackInterest ? `<p><strong>Track of Interest:</strong> ${data.trackInterest}</p>` : ''}
+        <p><strong>Message:</strong></p>
+        <p>${data.message.replace(/\n/g, '<br>')}</p>
+        <hr>
+        <p style="color: #666; font-size: 12px;">This message was sent from the CTN Chennai website contact form.</p>
+      `
+    });
+    console.log("Contact notification email sent successfully");
+  } catch (error) {
+    console.error("Failed to send contact notification email:", error);
+  }
+}
 
 export async function registerRoutes(
   httpServer: Server,
@@ -13,6 +52,9 @@ export async function registerRoutes(
     try {
       const validatedData = insertContactSubmissionSchema.parse(req.body);
       const submission = await storage.createContactSubmission(validatedData);
+      
+      await sendContactNotification(validatedData);
+      
       res.status(201).json({ 
         success: true, 
         message: "Thank you for contacting us! We'll get back to you soon.",
