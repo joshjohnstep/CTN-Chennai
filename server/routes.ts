@@ -22,7 +22,7 @@ async function sendContactNotification(data: {
 }) {
   try {
     await resend.emails.send({
-      from: "CTN Contact Form <onboarding@resend.dev>",
+      from: "CTN Contact Form <noreply@ctnchennai.org>",
       to: NOTIFICATION_EMAILS,
       subject: `New Contact Form Submission from ${data.name}`,
       html: `
