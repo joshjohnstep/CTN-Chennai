@@ -21,7 +21,7 @@ async function sendContactNotification(data: {
   trackInterest?: string | null;
 }) {
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: "CTN Contact Form <noreply@ctnchennai.org>",
       to: NOTIFICATION_EMAILS,
       subject: `New Contact Form Submission from ${data.name}`,
@@ -37,7 +37,7 @@ async function sendContactNotification(data: {
         <p style="color: #666; font-size: 12px;">This message was sent from the CTN Chennai website contact form.</p>
       `
     });
-    console.log("Contact notification email sent successfully");
+    console.log("Contact notification email result:", JSON.stringify(result, null, 2));
   } catch (error) {
     console.error("Failed to send contact notification email:", error);
   }
