@@ -257,10 +257,7 @@ export default function Home() {
                       <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors flex-shrink-0">
                         <Mail className="w-4 h-4 text-accent" />
                       </div>
-                      <div className="font-light text-sm flex flex-col gap-1 pt-2">
-                        <a href="mailto:rameshr@ctnchennai.org" className="hover:text-accent transition-colors">rameshr@ctnchennai.org</a>
-                        <a href="mailto:nelsons@ctnchennai.org" className="hover:text-accent transition-colors">nelsons@ctnchennai.org</a>
-                      </div>
+                      <a href="mailto:infoctn23@gmail.com" className="font-light text-sm pt-2 hover:text-accent transition-colors">infoctn23@gmail.com</a>
                     </div>
                   </div>
                 </div>
@@ -291,7 +288,7 @@ export default function Home() {
 
                 <div className="md:col-span-1">
                   <h4 className="text-sm font-semibold mb-8 text-white uppercase tracking-[0.15em]">Our Tracks</h4>
-                  <ul className="space-y-4 text-gray-400">
+                  <ul className="space-y-3 text-gray-400">
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
@@ -307,13 +304,37 @@ export default function Home() {
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        Business & Professionals
+                        Millennials Track
                       </a>
                     </li>
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        Millennials Track
+                        Business Track
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Professionals Track
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Marginalised Track (MEET)
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Media Track
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Mental Health Track
                       </a>
                     </li>
                   </ul>
