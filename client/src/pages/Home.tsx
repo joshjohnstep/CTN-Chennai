@@ -14,7 +14,9 @@ import {
   Video, 
   BrainCircuit, 
   Sparkles,
+  MapPin,
   Mail,
+  Phone,
   ArrowRight,
   Building2
 } from "lucide-react";
@@ -230,7 +232,7 @@ export default function Home() {
         <footer id="contact" className="bg-gray-900 text-white py-24">
           <div className="container mx-auto px-4">
             <FadeIn>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-16">
                 <div className="md:col-span-1">
                   <img 
                     src="/ctn-logo.png" 
@@ -244,65 +246,74 @@ export default function Home() {
                 
                 <div className="md:col-span-1">
                   <h4 className="text-sm font-semibold mb-8 text-white uppercase tracking-[0.15em]">Contact Us</h4>
-                  <div className="flex items-start gap-4 text-gray-400 hover:text-white transition-colors group">
-                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors flex-shrink-0">
-                      <Mail className="w-4 h-4 text-accent" />
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4 text-gray-400 hover:text-white transition-colors group">
+                      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors flex-shrink-0">
+                        <MapPin className="w-4 h-4 text-accent" />
+                      </div>
+                      <span className="font-light text-sm pt-2">Chennai, Tamil Nadu, India</span>
                     </div>
-                    <a href="mailto:infoctn23@gmail.com" className="font-light text-sm pt-2 hover:text-accent transition-colors">
-                      infoctn23@gmail.com
-                    </a>
+                    <div className="flex items-start gap-4 text-gray-400 hover:text-white transition-colors group">
+                      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-accent/20 transition-colors flex-shrink-0">
+                        <Mail className="w-4 h-4 text-accent" />
+                      </div>
+                      <div className="font-light text-sm flex flex-col gap-1 pt-2">
+                        <a href="mailto:rameshr@ctnchennai.org" className="hover:text-accent transition-colors">rameshr@ctnchennai.org</a>
+                        <a href="mailto:nelsons@ctnchennai.org" className="hover:text-accent transition-colors">nelsons@ctnchennai.org</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 <div className="md:col-span-1">
+                  <h4 className="text-sm font-semibold mb-8 text-white uppercase tracking-[0.15em]">Quick Links</h4>
+                  <ul className="space-y-4 text-gray-400">
+                    <li>
+                      <a href="#about" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        About Us
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Our Tracks
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#contact" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                        Contact
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="md:col-span-1">
                   <h4 className="text-sm font-semibold mb-8 text-white uppercase tracking-[0.15em]">Our Tracks</h4>
-                  <ul className="space-y-3 text-gray-400">
+                  <ul className="space-y-4 text-gray-400">
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        CTN Movement of Churches
+                        Movement of Churches
                       </a>
                     </li>
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        CTN Mobilisation of Prayer
+                        Mobilisation of Prayer
                       </a>
                     </li>
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        CTN Millennials Track
+                        Business & Professionals
                       </a>
                     </li>
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        CTN Business Track
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        CTN Professionals Track
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        CTN Marginalised Track (MEET)
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        CTN Media Track
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        CTN Mental Health Track
+                        Millennials Track
                       </a>
                     </li>
                   </ul>
