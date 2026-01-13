@@ -45,7 +45,7 @@ export default function Home() {
       image: prayerImg
     },
     {
-      title: "CTN Millennials Track",
+      title: "CTN Youth Track",
       description: "Empowering the next generation of leaders. We engage youth and young adults through sports, music, creative events, and discipleship programmes. By recognising their gifts and nurturing Kingdom values, we are raising a generation of city changers—leaders who will carry God's heart into every sphere of society.",
       icon: Users,
       image: youthImg
@@ -63,7 +63,7 @@ export default function Home() {
       image: professionalsImg
     },
     {
-      title: "CTN Marginalised Track (MEET)",
+      title: "CTN City Serve",
       description: "Empowering and equipping the Church to engage meaningfully with the marginalised. Through the Marginalised Empowering and Equipping Track (MEET), we help Churches and organisations engage with the city's most vulnerable communities. We catalyse partnerships, promote justice, and inspire compassion so that the Church becomes a visible expression of God's love in action.",
       icon: HeartHandshake,
       image: socialImg
@@ -304,7 +304,7 @@ export default function Home() {
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        Millennials Track
+                        Youth Track
                       </a>
                     </li>
                     <li>
@@ -322,7 +322,7 @@ export default function Home() {
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        Marginalised Track (MEET)
+                        City Serve
                       </a>
                     </li>
                     <li>
