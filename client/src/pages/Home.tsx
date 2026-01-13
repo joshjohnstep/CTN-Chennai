@@ -45,7 +45,7 @@ export default function Home() {
       image: prayerImg
     },
     {
-      title: "CTN Youth Track",
+      title: "CTN Neu Gen",
       description: "Empowering the next generation of leaders. We engage youth and young adults through sports, music, creative events, and discipleship programmes. By recognising their gifts and nurturing Kingdom values, we are raising a generation of city changers—leaders who will carry God's heart into every sphere of society.",
       icon: Users,
       image: youthImg
@@ -304,7 +304,7 @@ export default function Home() {
                     <li>
                       <a href="#tracks" className="hover:text-accent transition-colors font-light text-sm flex items-center gap-3 group">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
-                        Youth Track
+                        Neu Gen
                       </a>
                     </li>
                     <li>

@@ -14,7 +14,7 @@ import { Loader2, Send } from "lucide-react";
 const tracks = [
   "CTN Movement of Churches",
   "CTN Mobilisation of Prayer",
-  "CTN Youth Track",
+  "CTN Neu Gen",
   "CTN Business Track",
   "CTN Professionals Track",
   "CTN City Serve",
