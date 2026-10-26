@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { insertNewsletterSubscriberSchema, newsletterSubscribers } from "../../shared/schema";
+import { insertNewsletterSubscriberSchema, newsletterSubscribers } from "../../shared/schema.js";
 import { fromZodError } from "zod-validation-error";
-import { getDb } from "../../db/vercel";
+import { getDb } from "../../db/vercel.js";
 import { eq } from "drizzle-orm";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

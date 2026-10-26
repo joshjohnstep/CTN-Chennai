@@ -1,9 +1,9 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
-import { insertContactSubmissionSchema } from "../shared/schema";
+import { insertContactSubmissionSchema } from "../shared/schema.js";
 import { fromZodError } from "zod-validation-error";
-import { getDb } from "../db/vercel";
-import { contactSubmissions } from "../shared/schema";
+import { getDb } from "../db/vercel.js";
+import { contactSubmissions } from "../shared/schema.js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
